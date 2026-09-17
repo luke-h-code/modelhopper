@@ -66,5 +66,3 @@ Before connecting the application to Supabase, run `scripts/check-providers.ts`.
 Provider availability degrades gracefully on Thinking>Max. If a provider key is missing, only the routing to that provider becomes unavailable rather than the application as a whole. However, a provider key must be specified for the classifier and for Fast and Thinking>Budget. I used an OpenAI API compatible model for these cases.
 
 The desktop build is [apps/desktop](apps/desktop/README.md).
-
-MIT licensed — see [LICENSE](LICENSE).
