@@ -1,0 +1,17 @@
+{
+  "name": "@chat-router/desktop",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "dev:local": "tauri dev --config src-tauri/tauri.local.conf.json",
+    "build:local": "tauri build --config src-tauri/tauri.local.conf.json",
+    "ios:init": "tauri ios init",
+    "android:init": "tauri android init"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4"
+  }
+}

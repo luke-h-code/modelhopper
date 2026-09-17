@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.vercel/
+.DS_Store
+supabase/.temp/
+supabase/.branches/
+*.log
+
+# local secrets for `supabase config push` (never commit)
+.smtp.env
+
+# Python bytecode from the test suites
+__pycache__/
+*.pyc
+
+# Deno lockfile from ad-hoc `deno check` runs; the functions are typechecked in CI
+deno.lock
+
+# Local Tauri config override: your own Supabase ref in the desktop CSP.
+# The committed tauri.conf.json ships a placeholder on purpose — see
+# apps/desktop/README.md. Never commit this file.
+apps/desktop/src-tauri/tauri.local.conf.json

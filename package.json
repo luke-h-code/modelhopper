@@ -1,0 +1,27 @@
+{
+  "name": "chat-router",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/client",
+    "build": "npm run build --workspace apps/client",
+    "preview": "npm run preview --workspace apps/client",
+    "typecheck": "npm run typecheck --workspace apps/client",
+    "db:start": "supabase start",
+    "db:reset": "supabase db reset",
+    "db:push": "supabase db push",
+    "fn:serve": "supabase functions serve chat",
+    "fn:deploy": "supabase functions deploy chat",
+    "desktop:dev": "npm run dev --workspace apps/desktop",
+    "desktop:build": "npm run build --workspace apps/desktop",
+    "build:desktop": "npm run build:desktop --workspace apps/client"
+  }
+}

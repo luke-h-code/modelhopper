@@ -1,0 +1,76 @@
+# Build the desktop app for macOS and Windows.
+#
+# Windows is here because it cannot be built anywhere else. Tauri compiles a
+# native binary and links the platform's own webview, so there is no
+# cross-compiling from a Mac: a Windows installer needs a Windows machine, and
+# this is the cheapest one available. macOS rides along so both installers come
+# from the same commit rather than one being built by hand months later.
+#
+# Manual only. A desktop build takes minutes and produces artefacts nobody
+# reads on an ordinary push; run it when you actually want installers.
+
+name: Desktop
+
+on:
+  workflow_dispatch:
+  # Tags are the other moment installers are genuinely wanted.
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    strategy:
+      # One platform failing should not throw away the other's artefacts —
+      # they take long enough that a rerun is a real cost.
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            name: macos
+          - os: windows-latest
+            name: windows
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      # Keyed on the lockfile and the OS: the two platforms share no artefacts,
+      # and a dependency change should miss rather than link something stale.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            apps/desktop/src-tauri/target
+          key: ${{ matrix.os }}-cargo-${{ hashFiles('apps/desktop/src-tauri/Cargo.lock') }}
+          restore-keys: ${{ matrix.os }}-cargo-
+
+      - run: npm ci
+
+      # Read at BUILD time, not run time — anything VITE_ is inlined into the
+      # bundle. Without these the guard in lib/supabase.ts throws, rolldown
+      # tree-shakes the whole app away as dead code, and the installer contains
+      # a blank page. See the root README's note about the ~199 kB bundle.
+      - name: Build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+        run: npm run desktop:build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: modelhopper-${{ matrix.name }}
+          if-no-files-found: error
+          path: |
+            apps/desktop/src-tauri/target/release/bundle/dmg/*.dmg
+            apps/desktop/src-tauri/target/release/bundle/macos/*.app
+            apps/desktop/src-tauri/target/release/bundle/msi/*.msi
+            apps/desktop/src-tauri/target/release/bundle/nsis/*.exe

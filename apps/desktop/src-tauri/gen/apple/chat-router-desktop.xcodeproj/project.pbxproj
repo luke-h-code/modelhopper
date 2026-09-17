@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EEAA93DD5442E3E5D47DB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BBC30BAD5B8883F4B5E992 /* Assets.xcassets */; };
+		2C8B2160C7F1D05EAD8124E0 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A93A2B7456D874D349969E /* MetalKit.framework */; };
+		3852CCEFB68BC6ED0B4E7950 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8478079028BAB3DC477768 /* Security.framework */; };
+		4E57D7747962FD4A820730CE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD3C8F1404397107D643E8 /* main.mm */; };
+		4EC991CD245A7B08EBCE62DB /* assets in Resources */ = {isa = PBXBuildFile; fileRef = A9E0B3E14C2C478FEE6F554C /* assets */; };
+		5AE62144DCEFF29958F4FC7F /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E33A9A8632B4F2EE5BEABE9 /* libapp.a */; };
+		6AB660082D64D9FB13D50405 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF53E76C3F9244BED2902D87 /* WebKit.framework */; };
+		92DFB6A4E549B4AB2E92E311 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0268148D9E33971902F1F4 /* Metal.framework */; };
+		B4A337D2C217109F1FC0A4E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558FB35867E46B16AA808083 /* LaunchScreen.storyboard */; };
+		D3748F6379DC8BA1CC7914BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72890D5EB95416B2231CDC6B /* CoreGraphics.framework */; };
+		E26059993710879A0E6C79F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE5F608B03AA77C1239860 /* QuartzCore.framework */; };
+		FBFE908FF970270B4A91A75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E241B808E9496921C38B70 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15FB3A36C006E5B29CC42B7C /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		20AFBDD484424F0A8F81AFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2E33A9A8632B4F2EE5BEABE9 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		39A4A165E3AC1A08835DAFBD /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
+		3FBD3C8F1404397107D643E8 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		558FB35867E46B16AA808083 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D8478079028BAB3DC477768 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		72890D5EB95416B2231CDC6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		803BCDA9E42FAE250C842DED /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
+		85E241B808E9496921C38B70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A9E0B3E14C2C478FEE6F554C /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		AF53E76C3F9244BED2902D87 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C3BE93ED4C4D022132A45C8B /* chat-router-desktop_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "chat-router-desktop_iOS.entitlements"; sourceTree = "<group>"; };
+		DA0268148D9E33971902F1F4 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		EB6C11F9AE3B669ACE782298 /* chat-router-desktop_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "chat-router-desktop_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4AE5F608B03AA77C1239860 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F5BBC30BAD5B8883F4B5E992 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9A93A2B7456D874D349969E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4B88659641349642E2813B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE62144DCEFF29958F4FC7F /* libapp.a in Frameworks */,
+				D3748F6379DC8BA1CC7914BE /* CoreGraphics.framework in Frameworks */,
+				92DFB6A4E549B4AB2E92E311 /* Metal.framework in Frameworks */,
+				2C8B2160C7F1D05EAD8124E0 /* MetalKit.framework in Frameworks */,
+				E26059993710879A0E6C79F5 /* QuartzCore.framework in Frameworks */,
+				3852CCEFB68BC6ED0B4E7950 /* Security.framework in Frameworks */,
+				FBFE908FF970270B4A91A75C /* UIKit.framework in Frameworks */,
+				6AB660082D64D9FB13D50405 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1901FD316FECE1FB37C72B34 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				803BCDA9E42FAE250C842DED /* lib.rs */,
+				39A4A165E3AC1A08835DAFBD /* main.rs */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		26367184288ECBB316787B91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB6C11F9AE3B669ACE782298 /* chat-router-desktop_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8654B4C3921B13C8B7722A1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72890D5EB95416B2231CDC6B /* CoreGraphics.framework */,
+				2E33A9A8632B4F2EE5BEABE9 /* libapp.a */,
+				DA0268148D9E33971902F1F4 /* Metal.framework */,
+				F9A93A2B7456D874D349969E /* MetalKit.framework */,
+				F4AE5F608B03AA77C1239860 /* QuartzCore.framework */,
+				6D8478079028BAB3DC477768 /* Security.framework */,
+				85E241B808E9496921C38B70 /* UIKit.framework */,
+				AF53E76C3F9244BED2902D87 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FF8EE8EE6996A98DD96F8D1 = {
+			isa = PBXGroup;
+			children = (
+				A9E0B3E14C2C478FEE6F554C /* assets */,
+				F5BBC30BAD5B8883F4B5E992 /* Assets.xcassets */,
+				558FB35867E46B16AA808083 /* LaunchScreen.storyboard */,
+				9A6675A4D8F645AC866D771B /* chat-router-desktop_iOS */,
+				F4576B2B5830CCBC904AEDB0 /* Externals */,
+				96CB079FC5A020A38692EE15 /* Sources */,
+				1901FD316FECE1FB37C72B34 /* src */,
+				8654B4C3921B13C8B7722A1B /* Frameworks */,
+				26367184288ECBB316787B91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96CB079FC5A020A38692EE15 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C5BAF3E45512BB9B9FE5AA8B /* chat-router-desktop */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9A6675A4D8F645AC866D771B /* chat-router-desktop_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C3BE93ED4C4D022132A45C8B /* chat-router-desktop_iOS.entitlements */,
+				20AFBDD484424F0A8F81AFE3 /* Info.plist */,
+			);
+			path = "chat-router-desktop_iOS";
+			sourceTree = "<group>";
+		};
+		C5BAF3E45512BB9B9FE5AA8B /* chat-router-desktop */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD3C8F1404397107D643E8 /* main.mm */,
+				F6DEC01AA9FB741FB58834B1 /* bindings */,
+			);
+			path = "chat-router-desktop";
+			sourceTree = "<group>";
+		};
+		F4576B2B5830CCBC904AEDB0 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		F6DEC01AA9FB741FB58834B1 /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				15FB3A36C006E5B29CC42B7C /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		051C0BF013BA176019A12B3E /* chat-router-desktop_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CFFE7F5BBA75CE1BF7861E1 /* Build configuration list for PBXNativeTarget "chat-router-desktop_iOS" */;
+			buildPhases = (
+				E8766C48FB0F0C8E2570E0A9 /* Build Rust Code */,
+				83C7932E0E4F7640E7C082F1 /* Sources */,
+				45864F56BA39AC8FD07A1935 /* Resources */,
+				F4B88659641349642E2813B5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "chat-router-desktop_iOS";
+			packageProductDependencies = (
+			);
+			productName = "chat-router-desktop_iOS";
+			productReference = EB6C11F9AE3B669ACE782298 /* chat-router-desktop_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		546060D0EA120C6F4FDEC23B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 2721FE5109246081267AD5DE /* Build configuration list for PBXProject "chat-router-desktop" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8FF8EE8EE6996A98DD96F8D1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 26367184288ECBB316787B91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				051C0BF013BA176019A12B3E /* chat-router-desktop_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45864F56BA39AC8FD07A1935 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEAA93DD5442E3E5D47DB6B /* Assets.xcassets in Resources */,
+				B4A337D2C217109F1FC0A4E6 /* LaunchScreen.storyboard in Resources */,
+				4EC991CD245A7B08EBCE62DB /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8766C48FB0F0C8E2570E0A9 /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "npm run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83C7932E0E4F7640E7C082F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E57D7747962FD4A820730CE /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		442F5031FAF813B2E0C676CF /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "chat-router-desktop_iOS/chat-router-desktop_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "chat-router-desktop_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukehcode.chatrouter;
+				PRODUCT_NAME = "Chat Router";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = debug;
+		};
+		494B92100741B6C04995B983 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		DF8FC75F00F251A5CE50EF34 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "chat-router-desktop_iOS/chat-router-desktop_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "chat-router-desktop_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukehcode.chatrouter;
+				PRODUCT_NAME = "Chat Router";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = release;
+		};
+		ECB81690B5C487FFE759AAED /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2721FE5109246081267AD5DE /* Build configuration list for PBXProject "chat-router-desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECB81690B5C487FFE759AAED /* debug */,
+				494B92100741B6C04995B983 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		6CFFE7F5BBA75CE1BF7861E1 /* Build configuration list for PBXNativeTarget "chat-router-desktop_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				442F5031FAF813B2E0C676CF /* debug */,
+				DF8FC75F00F251A5CE50EF34 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 546060D0EA120C6F4FDEC23B /* Project object */;
+}

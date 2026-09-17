@@ -1,0 +1,39 @@
+-- Go back to charging cached input at the full rate.
+--
+-- A deliberate over-bill, not a mistake. 0013 started discounting cache hits,
+-- which is closer to what the providers actually charge — one Gemini run came
+-- down from £0.28 to about £0.10, matching Google's dashboard. But the cost
+-- here is RECONSTRUCTED from token counts rather than reported by the
+-- provider, and a reconstruction that under-states is the dangerous direction:
+-- an allowance that thinks there is money left when there is not will happily
+-- keep spending.
+--
+-- Charging everything at full rate makes this a conservative ceiling. Real
+-- spend is at or below what is recorded, so the allowance can only ever stop
+-- someone early, never late.
+--
+-- Nothing else changes, and this is the point of the split staying in place:
+-- `usage_events.cached_input_tokens` is still recorded on every row, so the
+-- discount that is not being applied is still being measured. After a month
+-- there will be a real answer to "what would the cached rate have saved",
+-- taken from this project rather than from a pricing page.
+--
+-- To turn the discount back on, restore these — the same numbers 0013 set,
+-- from each provider's own published rate at 1 USD = 0.74007:
+--
+--   claude-opus-5     370035   (0.1x read; writes are 1.25x and are NOT
+--                               discounted here, so they stay at full rate)
+--   gemini-3.8-flash   55505   (0.1x, implicit caching, on by default)
+--   gpt-5.6-luna       14801   (0.1x read)
+--   muse-spark-1.3    111010   ($0.15/Mtok flat against $1.25 standard)
+--
+-- Before doing that, confirm with USAGE_DEBUG=1 that the provider actually
+-- reports implicit cache hits in the field being read. Gemini documents
+-- `cachedContentTokenCount` against EXPLICIT caching; if implicit hits are not
+-- reported there, the discount would be applied to a number that is always
+-- zero and nothing would change anyway.
+
+-- Zero means "charge cached tokens at the full input rate" — see the fallback
+-- in costOf(), which is written so this column can be switched off without
+-- touching any code.
+update public.model_prices set cached_input_micros_per_mtok = 0;
