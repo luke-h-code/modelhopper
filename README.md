@@ -55,11 +55,13 @@ supabase secrets set ANTHROPIC_API_KEY=...     # and any others you want
 npm run dev
 ```
 
-`db push` creates the schema, but the auth settings live in `supabase/config.toml` and reach the project only through `config push`. Skipping it leaves you unable to sign in at all: sign-in is a 6-digit OTP rather than a magic link, and the client sets `detectSessionInUrl: false`, so Supabase's default magic-link email can never complete a session.
+`db push` creates the database schema, but authentication behaviour is configured separately in `supabase/config.toml` and only reaches the linked project through `config push`. Skipping this step leaves sign-in non-functional: the application uses a 6-digit OTP rather than a magic-link flow, and the client sets `detectSessionInUrl: false`, so Supabase’s default magic-link email cannot establish a session.
 
-`config push` sends the whole file, so read it before running it against anything live. It ships `site_url` and `additional_redirect_urls` as `localhost:5173`, which is right while you develop and wrong once you deploy, and `enable_signup = true`, which would reopen public signup on a project that had it closed. Change those in the dashboard rather than here once the project is real. The SMTP block expects `GMAIL_ADDRESS` and `GMAIL_APP_PASSWORD`; supply them, or disable it and accept the rate limit on Supabase's built-in mailer.
+`config push` applies the entire configuration file, so review it carefully before running it against any live project. The repository configuration uses `localhost:5173` for both `site_url` and `additional_redirect_urls`, which is appropriate for local development but must be changed for deployment. It also sets `enable_signup = true`, which will re-enable public sign-up if the target project currently has registration disabled. Once the project is in production, these settings are better managed deliberately in the Supabase dashboard rather than pushed unchanged from the development configuration.
 
-Before connecting the application to Supabase, run `scripts/check-providers.ts`. It validates that your provider credentials and configured model IDs resolve correctly, allowing provider configuration issues to be caught independently of the backend. Tests for Gemini, OpenAI, and Anthropic compatible API calls are included and were correct on 17 Sep 2026.
+The SMTP configuration expects `GMAIL_ADDRESS` and `GMAIL_APP_PASSWORD`. Supply both if you want to use a Gmail-backed SMTP sender. Otherwise, disable the custom SMTP block and use Supabase’s built-in mailer, accepting its lower sending limits.
+
+Before connecting the application to Supabase, run `scripts/check-providers.ts`. It validates that your provider credentials and configured model IDs resolve correctly, allowing provider configuration issues to be caught independently of the backend. Compatibility checks are included for Gemini, OpenAI, and Anthropic-style APIs and were verified against the configured endpoints on 17 Sep 2026.
 
 Provider availability degrades gracefully on Thinking>Max. If a provider key is missing, only the routing to that provider becomes unavailable rather than the application as a whole. However, a provider key must be specified for the classifier and for Fast and Thinking>Budget. I used an OpenAI API compatible model for these cases.
 
