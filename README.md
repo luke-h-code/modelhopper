@@ -5,7 +5,6 @@
   </picture>
 </div>
 
-<br>
 
 ## Main
 
